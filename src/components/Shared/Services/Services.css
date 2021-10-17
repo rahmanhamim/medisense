@@ -1,0 +1,10 @@
+.services-section {
+ background-color: #f0f5f7;
+}
+
+.services-title {
+ margin: 0 auto;
+ margin-bottom: 1rem;
+ border-bottom: 3px solid #67c9e0;
+ width: fit-content;
+}

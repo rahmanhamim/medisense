@@ -1,0 +1,10 @@
+.our-offer-title {
+ border-bottom: 5px double #f15b5a;
+ width: fit-content;
+ margin: 0 auto;
+}
+.our-offer-icon {
+ font-size: 4rem;
+ color: #67c9e0;
+ padding: 0.5em;
+}

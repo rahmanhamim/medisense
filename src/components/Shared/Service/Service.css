@@ -1,0 +1,17 @@
+.service-card {
+ overflow: hidden;
+ border-radius: 10px;
+ border: none;
+ box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.11);
+ transition: all 400ms;
+}
+.service-card:hover {
+ box-shadow: 5px 3px 8px 6px rgba(0, 0, 0, 0.11);
+}
+.service-card img {
+ border-radius: 10px;
+ transition: all 400ms;
+}
+.service-card img:hover {
+ transform: scale(1.1);
+}

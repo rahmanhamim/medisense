@@ -1,0 +1,31 @@
+.banner-container {
+ background: url("../../../images/banner2.jpg");
+ height: 80vh;
+ background-position: center;
+ background-size: cover;
+ background-repeat: no-repeat;
+}
+.banner-logo {
+ width: 30px;
+}
+.banner-title {
+ font-size: 3.5rem;
+}
+.banner-span {
+ font-weight: 700;
+}
+.banner-description {
+ font-size: 1.5rem;
+}
+.btn-regular {
+ border: none;
+ padding: 0.5em 1em;
+ background-color: #67c9e0;
+ color: white;
+ font-weight: bold;
+ border-radius: 5px;
+ transition: all 400ms;
+}
+.btn-regular:hover {
+ background-color: #f15b5a;
+}

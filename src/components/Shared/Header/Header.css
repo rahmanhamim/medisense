@@ -1,0 +1,47 @@
+.branding {
+ text-decoration: none;
+ color: black;
+ font-size: 1.5rem;
+ color: #67c9e0;
+ transition: all 400ms;
+}
+.branding:hover {
+ color: #f15b5a;
+}
+.branding-span {
+ color: #f15b5a;
+ font-weight: bold;
+ transition: all 400ms;
+}
+.branding-span:hover {
+ color: #67c9e0;
+}
+.branding-logo {
+ margin-left: 4px;
+ width: 20px;
+}
+
+.nav-link-custom {
+ color: rgb(53, 53, 53);
+ padding: 0.3em 0.8em;
+ border-radius: 5px;
+ transition: all 400ms;
+}
+.nav-link-custom:hover {
+ color: #fff;
+ background-color: #67c9e0;
+ border-radius: 5px;
+}
+
+.login-btn {
+ color: white;
+ padding: 0.3em 0.8em;
+ background-color: #f15b5a;
+ border-radius: 5px;
+ transition: all 200ms;
+}
+.login-btn:hover {
+ color: white;
+ background-color: #ee3a3a;
+ transform: scale(1.1);
+}
