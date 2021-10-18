@@ -30,7 +30,7 @@ const Header = () => {
       <Link className="text-decoration-none mx-2 nav-link-custom" to="/about">
        About Us
       </Link>
-      <Link className="text-decoration-none mx-2 login-btn" to="/about">
+      <Link className="text-decoration-none mx-2 login-btn" to="/login">
        Login
       </Link>
      </Nav>

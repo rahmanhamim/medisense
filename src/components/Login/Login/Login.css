@@ -1,0 +1,13 @@
+.login-container {
+ min-height: 50vh;
+ margin: 5rem auto;
+}
+
+.login-input {
+ padding: 0.6em 1.2em;
+ background-color: #f3f3f3;
+}
+.login-input:focus {
+ border: 2px solid #67c9e0;
+ box-shadow: inset 0 1px 1px #67cae0e3, 0 0 8px #acf0ffe0;
+}
