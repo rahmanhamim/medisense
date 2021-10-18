@@ -4,16 +4,26 @@ import "./Login.css";
 import loginImg from "../../../images/medisenselogin.svg";
 import googleLogo from "../../../images/icons/google.svg";
 import useAuth from "../../../hooks/useAuth";
+import { Link } from "react-router-dom";
 
 const Login = () => {
- const { signInWithGoogle } = useAuth();
+ const {
+  signInWithGoogle,
+  handleEmailChange,
+  handlePasswordChange,
+  signInWithEmail,
+ } = useAuth();
 
  return (
   <div className="login-container container">
    <div className="row d-flex justify-content-around align-items-center">
     <div className="col-12 col-md-5">
-     <Form>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
+     <Form onSubmit={signInWithEmail}>
+      <Form.Group
+       onBlur={handleEmailChange}
+       className="mb-3"
+       controlId="formBasicEmail"
+      >
        <Form.Label>Email address</Form.Label>
        <Form.Control
         className="login-input"
@@ -22,7 +32,12 @@ const Login = () => {
         required
        />
       </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicPassword" required>
+      <Form.Group
+       onBlur={handlePasswordChange}
+       className="mb-3"
+       controlId="formBasicPassword"
+       required
+      >
        <Form.Label>Password</Form.Label>
        <Form.Control
         className="login-input"
@@ -34,6 +49,10 @@ const Login = () => {
        Login
       </Button>
      </Form>
+     <Link to="/signup" className="d-block my-2 text-danger">
+      {" "}
+      Create new account{" "}
+     </Link>
      <hr />
      <button onClick={signInWithGoogle} className="sign-in-btn">
       <img className="sign-in-img" src={googleLogo} alt="" /> Sign in With

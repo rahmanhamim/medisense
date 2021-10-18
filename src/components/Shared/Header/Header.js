@@ -7,6 +7,7 @@ import useAuth from "../../../hooks/useAuth";
 
 const Header = () => {
  const { user, logOut } = useAuth();
+ console.log(user);
 
  return (
   <Navbar bg="light" expand="lg" className="py-3">
@@ -37,16 +38,23 @@ const Header = () => {
       {user.email && (
        <div className="user-details m-0">
         <p className="my-0">
-         <img src={user.photoURL} alt="" />
-         <span>{user.displayName}</span>
+         <img src={user?.photoURL} alt="" />
+         <span>
+          <strong>{user?.displayName}</strong>
+         </span>
         </p>
        </div>
       )}
 
-      {!user.email ? (
-       <Link className="text-decoration-none mx-2 login-btn" to="/login">
-        Login
-       </Link>
+      {!user?.email ? (
+       <>
+        <Link className="text-decoration-none mx-2 login-btn" to="/login">
+         Login
+        </Link>
+        <Link className="text-decoration-none mx-2 signup-btn" to="/signup">
+         Signup
+        </Link>
+       </>
       ) : (
        <button
         onClick={logOut}

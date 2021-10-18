@@ -12,9 +12,9 @@ const SingleService = () => {
    .then((data) => setServices(data));
  }, []);
 
- //  console.log(services, serviceID);
- const singleService = services.find((service) => service.id == serviceID);
- console.log(singleService);
+ const singleService = services.find(
+  (service) => Number(service.id) === Number(serviceID)
+ );
 
  return (
   <div className="single-service-container container my-5">
