@@ -3,8 +3,11 @@ import { Container, Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./Header.css";
 import logo from "../../../images/medeSenseLogo.png";
+import useAuth from "../../../hooks/useAuth";
 
 const Header = () => {
+ const { user, logOut } = useAuth();
+
  return (
   <Navbar bg="light" expand="lg" className="py-3">
    <Container>
@@ -30,9 +33,28 @@ const Header = () => {
       <Link className="text-decoration-none mx-2 nav-link-custom" to="/about">
        About Us
       </Link>
-      <Link className="text-decoration-none mx-2 login-btn" to="/login">
-       Login
-      </Link>
+
+      {user.email && (
+       <div className="user-details m-0">
+        <p className="my-0">
+         <img src={user.photoURL} alt="" />
+         <span>{user.displayName}</span>
+        </p>
+       </div>
+      )}
+
+      {!user.email ? (
+       <Link className="text-decoration-none mx-2 login-btn" to="/login">
+        Login
+       </Link>
+      ) : (
+       <button
+        onClick={logOut}
+        className="text-decoration-none mx-2 logout-btn"
+       >
+        Logout
+       </button>
+      )}
      </Nav>
     </Navbar.Collapse>
    </Container>

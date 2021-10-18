@@ -15,3 +15,17 @@
 .service-card img:hover {
  transform: scale(1.1);
 }
+.learn-more-btn {
+ border: none;
+ padding: 0.5em 1em;
+ background-color: #67c9e0;
+ color: white;
+ font-weight: bold;
+ border-radius: 5px;
+ text-decoration: none;
+ transition: all 400ms;
+}
+.learn-more-btn:hover {
+ color: white;
+ background-color: #f15b5a;
+}

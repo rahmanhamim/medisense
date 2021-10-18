@@ -2,8 +2,12 @@ import React from "react";
 import { Button, Form } from "react-bootstrap";
 import "./Login.css";
 import loginImg from "../../../images/medisenselogin.svg";
+import googleLogo from "../../../images/icons/google.svg";
+import useAuth from "../../../hooks/useAuth";
 
 const Login = () => {
+ const { signInWithGoogle } = useAuth();
+
  return (
   <div className="login-container container">
    <div className="row d-flex justify-content-around align-items-center">
@@ -31,6 +35,10 @@ const Login = () => {
       </Button>
      </Form>
      <hr />
+     <button onClick={signInWithGoogle} className="sign-in-btn">
+      <img className="sign-in-img" src={googleLogo} alt="" /> Sign in With
+      Google
+     </button>
     </div>
     <div className="col-12 col-md-5">
      <div>
