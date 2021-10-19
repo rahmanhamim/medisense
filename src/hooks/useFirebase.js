@@ -20,6 +20,7 @@ const useFirebase = () => {
  const [email, setEmail] = useState("");
  const [password, setPassword] = useState("");
  const [name, setName] = useState("");
+ const [isLoading, setIsLoading] = useState(true);
 
  //  email registration    -------------------------
  const handleEmailChange = (e) => {
@@ -72,17 +73,22 @@ const useFirebase = () => {
 
  // google sign in
  const signInWithGoogle = () => {
+  setIsLoading(true);
   signInWithPopup(auth, googleProvider)
    .then((result) => setUser(result.user))
    .catch((error) => {
     console.log(error.message);
-   });
+   })
+   .finally(() => setIsLoading(false));
  };
  // logout
  const logOut = () => {
-  signOut(auth).then(() => {
-   setUser({});
-  });
+  setIsLoading(true);
+  signOut(auth)
+   .then(() => {
+    setUser({});
+   })
+   .finally(() => setIsLoading(false));
  };
 
  // obeserver
@@ -91,6 +97,7 @@ const useFirebase = () => {
    if (user) {
     setUser(user);
    }
+   setIsLoading(false);
   });
   return unsubscribe;
  }, []);
@@ -104,6 +111,7 @@ const useFirebase = () => {
   handleEmailRegistration,
   signInWithEmail,
   handleNameChange,
+  isLoading,
  };
 };
 
