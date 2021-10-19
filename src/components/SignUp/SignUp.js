@@ -13,13 +13,14 @@ const SignUp = () => {
   handlePasswordChange,
   handleEmailRegistration,
   handleNameChange,
+  error,
  } = useAuth();
 
  // reload funtion used for showing name of newly registerd user
  const reloadFunction = () => {
   setTimeout(function () {
    window.location.reload(1);
-  }, 3000);
+  }, 7000);
  };
 
  return (
@@ -60,6 +61,7 @@ const SignUp = () => {
         required
        />
       </Form.Group>
+      {error && <p className="my-2 text-danger">{error}</p>}
       <Button onClick={reloadFunction} className="btn-regular" type="submit">
        Create Account
       </Button>{" "}

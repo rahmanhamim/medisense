@@ -12,7 +12,9 @@ const Login = () => {
   handleEmailChange,
   handlePasswordChange,
   signInWithEmail,
+  error,
  } = useAuth();
+ console.log(error);
 
  return (
   <div className="login-container container">
@@ -49,6 +51,7 @@ const Login = () => {
        Login
       </Button>
      </Form>
+     {error && <p className="my-2 text-danger">{error}</p>}
      <Link to="/signup" className="d-block my-2 text-danger">
       {" "}
       Create new account{" "}

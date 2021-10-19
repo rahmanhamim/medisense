@@ -20,6 +20,7 @@ const useFirebase = () => {
  const [email, setEmail] = useState("");
  const [password, setPassword] = useState("");
  const [name, setName] = useState("");
+ const [error, setError] = useState("");
  const [isLoading, setIsLoading] = useState(true);
 
  //  email registration    -------------------------
@@ -46,11 +47,11 @@ const useFirebase = () => {
     const user = result.user;
     console.log(user);
     setUserName();
+    setError("");
    })
    .catch((error) => {
-    const errorCode = error.code;
     const errorMessage = error.message;
-    console.log(errorCode, errorMessage);
+    setError(errorMessage);
    });
   e.preventDefault();
  };
@@ -65,9 +66,10 @@ const useFirebase = () => {
    .then((result) => {
     const user = result.user;
     console.log(user);
+    setError("");
    })
    .catch((err) => {
-    console.log(err.message);
+    setError(err.message);
    });
  };
 
@@ -75,9 +77,12 @@ const useFirebase = () => {
  const signInWithGoogle = () => {
   setIsLoading(true);
   signInWithPopup(auth, googleProvider)
-   .then((result) => setUser(result.user))
+   .then((result) => {
+    setError("");
+    return setUser(result.user);
+   })
    .catch((error) => {
-    console.log(error.message);
+    setError(error.message);
    })
    .finally(() => setIsLoading(false));
  };
@@ -102,6 +107,8 @@ const useFirebase = () => {
   return unsubscribe;
  }, []);
 
+ console.log(error);
+
  return {
   user,
   signInWithGoogle,
@@ -112,6 +119,7 @@ const useFirebase = () => {
   signInWithEmail,
   handleNameChange,
   isLoading,
+  error,
  };
 };
 
