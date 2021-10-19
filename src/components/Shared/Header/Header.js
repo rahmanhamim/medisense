@@ -7,7 +7,6 @@ import useAuth from "../../../hooks/useAuth";
 
 const Header = () => {
  const { user, logOut } = useAuth();
- console.log(user);
 
  return (
   <Navbar bg="light" expand="lg" className="py-3">
@@ -30,6 +29,12 @@ const Header = () => {
       </Link>
       <Link className="text-decoration-none mx-2 nav-link-custom" to="/doctors">
        Doctors
+      </Link>
+      <Link
+       className="text-decoration-none mx-2 nav-link-custom"
+       to="/appointment"
+      >
+       Appointment
       </Link>
       <Link className="text-decoration-none mx-2 nav-link-custom" to="/about">
        About Us

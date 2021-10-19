@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "./Footer.css";
 
 const Footer = () => {
@@ -90,9 +89,13 @@ const Footer = () => {
        </table>
        <p>
         Developed by{" "}
-        <Link to="https://www.facebook.com/rahmanhamim.info/" target="_blank">
+        <a
+         href="https://www.facebook.com/rahmanhamim.info/"
+         rel="noreferrer"
+         target="_blank"
+        >
          Rahman Hamim
-        </Link>
+        </a>
        </p>
       </div>
      </div>

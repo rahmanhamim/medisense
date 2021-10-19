@@ -1,6 +1,7 @@
 import React from "react";
 import "./Banner.css";
 import logo from "../../../images/medeSenseLogo.png";
+import { Link } from "react-router-dom";
 
 const Banner = () => {
  return (
@@ -14,11 +15,13 @@ const Banner = () => {
        <img className="banner-logo" src={logo} alt="" />
       </h1>
       <p className="banner-description">
-       Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-       nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
-       volutpat.
+       MediSense Specialized Hospital has all the characteristics of a
+       world-class hospital with wide range of services and specialists,
+       equipments and technology, ambience and service quality.
       </p>
-      <button className="btn-regular">Read More</button>
+      <Link to="/services" className="learn-more-btn">
+       Read More
+      </Link>
      </div>
     </div>
    </div>

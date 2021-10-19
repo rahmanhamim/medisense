@@ -1,5 +1,4 @@
 import React from "react";
-import { Card, Col, Row } from "react-bootstrap";
 import "./Testimonial.css";
 import patientImg1 from "../../../images/patient1.jpg";
 import patientImg2 from "../../../images/patient2.jpg";

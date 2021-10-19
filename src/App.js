@@ -13,6 +13,7 @@ import SingleService from "./components/SingleService/SingleService";
 import AuthProvider from "./contexts/AuthProvider";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import SignUp from "./components/SignUp/SignUp";
+import Appointment from "./components/Appointment/Appointment";
 
 function App() {
  return (
@@ -42,6 +43,9 @@ function App() {
       <Route exact path="/signup">
        <SignUp></SignUp>
       </Route>
+      <PrivateRoute exact path="/appointment">
+       <Appointment></Appointment>
+      </PrivateRoute>
       <Route path="*">
        <NotFound></NotFound>
       </Route>
