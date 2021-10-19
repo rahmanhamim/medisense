@@ -1,0 +1,6 @@
+.quote-section {
+ background: url("../../../images/quote-bg.jpg");
+ min-height: 50vh;
+ background-position: center;
+ background-size: cover;
+}
